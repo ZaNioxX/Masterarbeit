@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JupyterPersistentConnectionParameters">
+    <option name="knownRemoteServers">
+      <list>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="c79b6ab83ad680646d2f54a4ab0f1f3c6beb78ec35ba2214" />
+          <option name="urlString" value="http://127.0.0.1:8891/" />
+          <authParams2>
+            <map>
+              <entry key="token" value="c79b6ab83ad680646d2f54a4ab0f1f3c6beb78ec35ba2214" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="0ec2714fcaa213a8b2168708fbdb4f2af606c7b426e88243" />
+          <option name="urlString" value="http://127.0.0.1:8892/tree" />
+          <authParams2>
+            <map>
+              <entry key="token" value="0ec2714fcaa213a8b2168708fbdb4f2af606c7b426e88243" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="" />
+          <option name="urlString" value="http://localhost:8888/" />
+          <authParams2>
+            <map>
+              <entry key="token" value="" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="78d70fb67f4429872d7a2bbe7b95fc8493e8e940d7571382" />
+          <option name="urlString" value="http://localhost:8889/tree" />
+          <authParams2>
+            <map>
+              <entry key="token" value="78d70fb67f4429872d7a2bbe7b95fc8493e8e940d7571382" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+        <JupyterConnectionParameters>
+          <option name="authType" value="notebook" />
+          <option name="token" value="3d2e10d2992c5d86f1523f389322ddba1abdb25f9c881de5" />
+          <option name="urlString" value="http://localhost:8890/tree" />
+          <authParams2>
+            <map>
+              <entry key="token" value="3d2e10d2992c5d86f1523f389322ddba1abdb25f9c881de5" />
+            </map>
+          </authParams2>
+        </JupyterConnectionParameters>
+      </list>
+    </option>
+    <option name="moduleParameters">
+      <map>
+        <entry key="$USER_HOME$/Documents/HAW/Vorlesung/GP/Grundprojekt/.idea/Grundprojekt.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="managed" value="true" />
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Documents/HAW/Vorlesung/HP/Hauptprojekt/.idea/Hauptprojekt.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="managed" value="true" />
+              <option name="sdkHomePath" value="$USER_HOME$/miniforge3/envs/Grundprojekt/bin/python" />
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.idea/Masterarbeit.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="authType" value="notebook" />
+              <option name="token" value="0ec2714fcaa213a8b2168708fbdb4f2af606c7b426e88243" />
+              <option name="urlString" value="http://127.0.0.1:8892/tree" />
+              <authParams2>
+                <map>
+                  <entry key="token" value="0ec2714fcaa213a8b2168708fbdb4f2af606c7b426e88243" />
+                </map>
+              </authParams2>
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.idea/Masterarbeit.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="managed" value="true" />
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Masterthesis/.idea/Masterthesis.iml">
+          <value>
+            <JupyterConnectionParameters>
+              <option name="authType" value="notebook" />
+              <option name="token" value="78d70fb67f4429872d7a2bbe7b95fc8493e8e940d7571382" />
+              <option name="urlString" value="http://localhost:8889/tree" />
+              <authParams2>
+                <map>
+                  <entry key="token" value="78d70fb67f4429872d7a2bbe7b95fc8493e8e940d7571382" />
+                </map>
+              </authParams2>
+            </JupyterConnectionParameters>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
