@@ -57,32 +57,18 @@
     </option>
     <option name="moduleParameters">
       <map>
-        <entry key="$USER_HOME$/Documents/HAW/Vorlesung/GP/Grundprojekt/.idea/Grundprojekt.iml">
+        <entry key="$PROJECT_DIR$/../HAW/Vorlesung/GP/Grundprojekt/.idea/Grundprojekt.iml">
           <value>
             <JupyterConnectionParameters>
               <option name="managed" value="true" />
             </JupyterConnectionParameters>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Documents/HAW/Vorlesung/HP/Hauptprojekt/.idea/Hauptprojekt.iml">
+        <entry key="$PROJECT_DIR$/../HAW/Vorlesung/HP/Hauptprojekt/.idea/Hauptprojekt.iml">
           <value>
             <JupyterConnectionParameters>
               <option name="managed" value="true" />
               <option name="sdkHomePath" value="$USER_HOME$/miniforge3/envs/Grundprojekt/bin/python" />
-            </JupyterConnectionParameters>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/.idea/Masterarbeit.iml">
-          <value>
-            <JupyterConnectionParameters>
-              <option name="authType" value="notebook" />
-              <option name="token" value="0ec2714fcaa213a8b2168708fbdb4f2af606c7b426e88243" />
-              <option name="urlString" value="http://127.0.0.1:8892/tree" />
-              <authParams2>
-                <map>
-                  <entry key="token" value="0ec2714fcaa213a8b2168708fbdb4f2af606c7b426e88243" />
-                </map>
-              </authParams2>
             </JupyterConnectionParameters>
           </value>
         </entry>
