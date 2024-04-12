@@ -10,10 +10,11 @@ symptom = "Pyrexia"
 
 client = MongoClient('localhost', 27017)
 db = client.vaers
-col = client.reports
+col = client.combinations
 
 timer = Timer()
 timer.start()
+
 
 N_query_timer = Timer()
 N_query_timer.start()
@@ -24,17 +25,14 @@ print("N:", N)
 
 D_query_timer = Timer()
 D_query_timer.start()
-D_query = {'vax_data.'}
+D_query = {
+    "vax_data.VAX_TYPE": item["vaccine"],
+    "vax_data.VAX_MANU": item["manufacturer"]
+}
 D = col.count_documents(D_query)
 D_query_timer.stop()
 print("D query: ", formatting.format_time(D_query_timer.time()))
 
-D_query_timer = Timer()
-D_query_timer.start()
-D_query = {'vax_data.'}
-D = col.count_documents(D_query)
-D_query_timer.stop()
-print("D query: ", formatting.format_time(D_query_timer.time()))
 
 E_query_timer = Timer()
 E_query_timer.start()
