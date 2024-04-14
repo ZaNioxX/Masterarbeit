@@ -1,59 +1,62 @@
 import numpy as np
 from pymongo import MongoClient
 import disproportionaly_analysis
-from util import formatting
-from util.timer import Timer
+import timeit
 
-vaccine = "COVID19"
-Manufacturer = "NOVAVAX"
-symptom = "Pyrexia"
+# Start total runtime timer
+start_time = timeit.default_timer()
 
-client = MongoClient('localhost', 27017)
-db = client.vaers
-col = client.combinations
+# Connect to MongoDB and select collection
+client = MongoClient("mongodb://localhost:27017/")
+db = client["vaers"]
+collection = db["combinations"]
 
-timer = Timer()
-timer.start()
+# Define the query parameters
+vaccine = "COVID19-2"
+manufacturer = "MODERNA"
+symptom = "Transfusion"
 
+# Execute the MongoDB query
+result = collection.find_one({"vaccine": vaccine, "manufacturer": manufacturer, "symptom": symptom})
 
-N_query_timer = Timer()
-N_query_timer.start()
-N = col.estimated_document_count()
-N_query_timer.stop()
-print("N query:", formatting.format_time(N_query_timer.time()))
-print("N:", N)
+# Extract values from the result
+DE = result.get("DE")
+dE = result.get("dE")
+De = result.get("De")
+de = result.get("de")
 
-D_query_timer = Timer()
-D_query_timer.start()
-D_query = {
-    "vax_data.VAX_TYPE": item["vaccine"],
-    "vax_data.VAX_MANU": item["manufacturer"]
-}
-D = col.count_documents(D_query)
-D_query_timer.stop()
-print("D query: ", formatting.format_time(D_query_timer.time()))
+# Create the contingency table
+contingency_table = [
+    [DE, dE],
+    [De, de]
+]
 
+# Define a function to time each query
+def time_query(query_func):
+    start_time = timeit.default_timer()
+    result = query_func(contingency_table)
+    elapsed_time = (timeit.default_timer() - start_time) * 1000  # Convert to milliseconds
+    return result, elapsed_time
 
-E_query_timer = Timer()
-E_query_timer.start()
-E_query = {'vax_data.'}
-E = col.count_documents(E_query)
-E_query_timer.stop()
-print("E query: ", formatting.format_time(D_query_timer.time()))
+# Time each query
+rrr, rrr_time = time_query(disproportionaly_analysis.relative_reporting_ratio)
+ror, ror_time = time_query(disproportionaly_analysis.reporting_odds_ratio)
+prr, prr_time = time_query(disproportionaly_analysis.proportional_reporting_ratio)
+chi_square, chi_square_time = time_query(disproportionaly_analysis.chi_square_yates)
+information_component, information_component_time = time_query(disproportionaly_analysis.information_component)
 
-DE_query_timer = Timer()
-DE_query_timer.start()
-DE_query = {'$and': [D_query, E_query]}
-DE = col.count_documents(DE_query)
-DE_query_timer.stop()
-print("DE query: ", formatting.format_time(D_query_timer.time()))
+# Print results
+print("rrr query:", rrr)
+print("rrr query time (ms):", rrr_time)
+print("ror query:", ror)
+print("ror query time (ms):", ror_time)
+print("prr query:", prr)
+print("prr query time (ms):", prr_time)
+print("chi-square-yates:", chi_square)
+print("chi-square-yates time (ms):", chi_square_time)
+print("information_component:", information_component)
+print("information_component time:", "{:.2f} ms".format(information_component_time))
 
-timer.stop()
-print("Total: ", formatting.format_time(timer.time()))
-
-De = D - DE
-dE = E - DE
-de = N - (DE + De + dE)
-contingency_table = [[DE, dE], [De, de]]
-print(contingency_table)
-
+# Total runtime
+total_runtime = (timeit.default_timer() - start_time) * 1000  # Convert to milliseconds
+print("Total runtime:", "{:.2f} ms".format(total_runtime))

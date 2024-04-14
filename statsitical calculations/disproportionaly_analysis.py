@@ -114,10 +114,9 @@ def confidence_interval_information_component(contingency_table, IC):
 def main():
     # Given contingency table
     contingency_table = [
-        [1632, 6187],   # DE, dE
-        [47958, 11681356]  # De, de
+        [9, 938],
+        [16946, 2547122] # De, de
     ]
-
     print("Reporting Rate:", reporting_ratio(contingency_table))
     print("Relative Reporting Rate:", relative_reporting_ratio(contingency_table))
     print("Proportional Reporting Rate:", proportional_reporting_ratio(contingency_table))
@@ -126,8 +125,8 @@ def main():
     print("Standard Deviation RRR:", sd_rrr(contingency_table))
     print("Standard Deviation PRR:", sd_prr(contingency_table))
     print("Standard Deviation ROR:", sd_ror(contingency_table))
-    print("Confidence Interval RRR:",confidence_interval(relative_reporting_ratio(contingency_table), sd_rrr(contingency_table)))
-    print("Confidence Interval ROR:",confidence_interval(reporting_odds_ratio(contingency_table), sd_ror(contingency_table)))
+    print("Confidence Interval RRR:", confidence_interval(relative_reporting_ratio(contingency_table), sd_rrr(contingency_table)))
+    print("Confidence Interval ROR:", confidence_interval(reporting_odds_ratio(contingency_table), sd_ror(contingency_table)))
     print("Confidence Interval PRR:", confidence_interval(proportional_reporting_ratio(contingency_table), sd_prr(contingency_table)))
     print("Information Component:", information_component(contingency_table))
     print("Confidence Interval Information Component:", confidence_interval_information_component(contingency_table, information_component(contingency_table)))
