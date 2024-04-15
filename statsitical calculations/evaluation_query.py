@@ -1,4 +1,3 @@
-import numpy as np
 from pymongo import MongoClient
 import disproportionaly_analysis
 import timeit
@@ -12,9 +11,9 @@ db = client["vaers"]
 collection = db["combinations"]
 
 # Define the query parameters
-vaccine = "COVID19-2"
+vaccine = "COVID19"
 manufacturer = "MODERNA"
-symptom = "Transfusion"
+symptom = "Pyrexia"
 
 # Execute the MongoDB query
 db_query_start_time = timeit.default_timer()
@@ -33,6 +32,11 @@ contingency_table = [
     [De, de]
 ]
 
+def check_adverse_event(chisq, PRR): # Logik nach Evans
+    if chisq > 4 and PRR > 2:
+        print("Likely adverse event")
+    else:
+        print("No adverse event")
 # Define a function to time each query
 def time_query(query_func):
     start_time = timeit.default_timer()
@@ -59,6 +63,8 @@ print("chi-square-yates:", chi_square)
 print("chi-square-yates time (ms):", chi_square_time)
 print("information_component:", information_component)
 print("information_component time (ms):", information_component_time)
+print(check_adverse_event(chi_square, prr))
+
 
 # Total runtime
 total_runtime = (timeit.default_timer() - start_time) * 1000  # Convert to milliseconds
