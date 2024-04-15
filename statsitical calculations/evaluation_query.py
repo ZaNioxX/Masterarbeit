@@ -17,7 +17,9 @@ manufacturer = "MODERNA"
 symptom = "Transfusion"
 
 # Execute the MongoDB query
+db_query_start_time = timeit.default_timer()
 result = collection.find_one({"vaccine": vaccine, "manufacturer": manufacturer, "symptom": symptom})
+db_query_elapsed_time = (timeit.default_timer() - db_query_start_time) * 1000  # Convert to milliseconds
 
 # Extract values from the result
 DE = result.get("DE")
@@ -46,6 +48,7 @@ chi_square, chi_square_time = time_query(disproportionaly_analysis.chi_square_ya
 information_component, information_component_time = time_query(disproportionaly_analysis.information_component)
 
 # Print results
+print("DB Query time (ms):", db_query_elapsed_time)
 print("rrr query:", rrr)
 print("rrr query time (ms):", rrr_time)
 print("ror query:", ror)
@@ -55,7 +58,7 @@ print("prr query time (ms):", prr_time)
 print("chi-square-yates:", chi_square)
 print("chi-square-yates time (ms):", chi_square_time)
 print("information_component:", information_component)
-print("information_component time:", "{:.2f} ms".format(information_component_time))
+print("information_component time (ms):", information_component_time)
 
 # Total runtime
 total_runtime = (timeit.default_timer() - start_time) * 1000  # Convert to milliseconds

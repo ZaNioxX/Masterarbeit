@@ -111,7 +111,8 @@ def confidence_interval_information_component(contingency_table, IC):
     ci_upper = IC + var
     return ci_lower, ci_upper
 
-def main():
+#Uncomment for test runs with specific values
+'''def main():
     # Given contingency table
     contingency_table = [
         [9, 938],
@@ -132,4 +133,4 @@ def main():
     print("Confidence Interval Information Component:", confidence_interval_information_component(contingency_table, information_component(contingency_table)))
 
 if __name__ == "__main__":
-    main()
+    main()'''
