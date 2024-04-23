@@ -8,3 +8,4 @@ services:
       - 27017:27017
     volumes: # Map the local MongoDB data to the default location for MongoDB data in the container
       - $MONGODB_DATA:/data/db
+      - $MONGODB_EXPORTS:/exports
