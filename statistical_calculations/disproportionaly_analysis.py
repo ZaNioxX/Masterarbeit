@@ -137,9 +137,10 @@ def confidence_interval_information_component(contingency_table, IC):
 def main():
     # Given contingency table
     contingency_table = [
-        [334, 7520],
-        [23181, 2533980] # De, de
+        [63788, 116250],
+        [880401, 1504576] # De, de
     ]
+
 
     print("Reporting Rate:", reporting_ratio(contingency_table))
     print("Relative Reporting Rate:", relative_reporting_ratio(contingency_table))
