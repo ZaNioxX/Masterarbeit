@@ -5,7 +5,7 @@ def reporting_ratio(contingency_table):
     DE = contingency_table[0][0]
     De = contingency_table[1][0]
     D = DE + De
-    print(D)
+
     if D == 0:
         return 0
     reporting_rate = DE / D
@@ -192,8 +192,8 @@ def get_signal(contingency_table, method, confidence='chi2'):
 def main():
     # Given contingency table
     contingency_table = [
-        [1632, 6187],
-        [47958, 11681356] # De, de
+        [12559, 3757],
+        [931630, 1617069] # De, de
     ]
 
 
