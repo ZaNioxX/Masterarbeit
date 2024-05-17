@@ -6,11 +6,15 @@ def reporting_ratio(contingency_table):
     De = contingency_table[1][0]
     D = DE + De
 
-    if D == 0:
-        return 0
     reporting_rate = DE / D
     return reporting_rate
 
+def event_reporting_rate(contingency_table):
+    DE = contingency_table[0][0]
+    dE = contingency_table[0][1]
+    E = dE + DE
+    event_reporting_rate = DE / E
+    return event_reporting_rate
 
 def relative_reporting_ratio(contingency_table):
     DE = contingency_table[0][0]
